@@ -1,0 +1,37 @@
+@rootURL = http://localhost:5284
+
+GET {{rootURL}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{rootURL}}/api/product
+Accept: application/json
+
+###
+
+GET {{rootURL}}/api/order
+Accept: application/json
+
+###
+
+
+POST {{rootURL}}/api/product/create-product
+Content-Type: application/json
+{
+  "name": "itel S24 6.6'' 8GB RAM/256GB ROM Android 13 - Black",
+  "description": "Be at the top of your game with a mobile that matches your persona – the most powerful Smartphone in the segment with 5000 mAh battery, big 6.6 inch HD + punch hole screen, 108MP AI dual camera, Up to 8GB RAM, dual security and three attractive colours. A powerful bouquet of features to empower your life.",
+  "price": "130008"
+}
+
+###
+
+POST {{rootURL}}/api/order/create-order
+Content-Type: application/json
+{
+  "name": "1767215752",
+  "quantity": "2",
+  "productId": "1"
+}
+
+###
