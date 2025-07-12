@@ -14,20 +14,21 @@ namespace dotNET_Relationships.Controllers
         public async Task<IActionResult> GetProducts()
         {
             var products = await dbContext.Products
-                .Include(x => x.Orders)
+                .Include(x => x.OrderProducts)
+                    .ThenInclude(op => op.Order)
                 .Select(o => new
                 {
                     Id = o.Id,
                     Name = o.Name,
                     Description = o.Description,
                     Price = o.Price,
-                    Orders = o.Orders.Select(p => new
+                    Orders = o.OrderProducts.Select(p => new
                     {
-                        Id = p.Id,
-                        Name = p.Name,
-                        Quantity = p.Quantity,
-                        CreatedDate = p.CreatedDate,
-                        DeliveryDate = p.DeliveryDate
+                        Id = p.Order.Id,
+                        Name = p.Order.Name,
+                        QuantityOrdered = p.Quantity,
+                        CreatedDate = p.Order.CreatedDate,
+                        DeliveryDate = p.Order.DeliveryDate
                     })
                 })
                 .ToListAsync();
@@ -37,6 +38,7 @@ namespace dotNET_Relationships.Controllers
         [HttpPost("create-product")]
         public async Task<IActionResult> AddProduct(ProductDto productDto)
         {
+            Console.WriteLine(productDto);
             var product = new Product() { 
                 Name = productDto.Name,
                 Description = productDto.Description,
