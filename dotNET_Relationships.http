@@ -19,9 +19,9 @@ Accept: application/json
 POST {{rootURL}}/api/product/create-product
 Content-Type: application/json
 {
-  "name": "itel S24 6.6'' 8GB RAM/256GB ROM Android 13 - Black",
-  "description": "Be at the top of your game with a mobile that matches your persona – the most powerful Smartphone in the segment with 5000 mAh battery, big 6.6 inch HD + punch hole screen, 108MP AI dual camera, Up to 8GB RAM, dual security and three attractive colours. A powerful bouquet of features to empower your life.",
-  "price": "130008"
+  "name": "Pack Of 2 Plain Sleeveless Hooded T Shirt- Black & Grey",
+  "description": "Enjoy this DANAMI's  quality and stylish sleeveless t shirts with hood for comfort and causal outing and jogging. This 2 in one is made of fine cotton material. Please check DANAMI for more designs, colours, and styles.",
+  "price": "15900"
 }
 
 ###
@@ -29,9 +29,9 @@ Content-Type: application/json
 POST {{rootURL}}/api/order/create-order
 Content-Type: application/json
 {
-  "name": "1767215752",
-  "quantity": "2",
-  "productId": "1"
+  "name": "1923271452",
+  "quantity": "3",
+  "productId": "4"
 }
 
 ###
